@@ -5,9 +5,9 @@ import App from './app';
 import { GlobalStyles } from './styles/global';
 
 render(
-  <>
-    <GlobalStyles />
-    <App />
-  </>, 
-  document.getElementById('root')
+	<>
+		<GlobalStyles />
+		<App />
+	</>,
+	document.getElementById('root')
 );
