@@ -16,7 +16,7 @@ export const Inner = styled.div`
 export const Item = styled.div`
 	color: #ffffff;
 	margin-bottom: 10px;
-	max-width: 639.95px;
+	max-width: 100%;
 
 	&::first-of-type {
 		margin-top: 3em;
@@ -64,10 +64,6 @@ export const Body = styled.div`
 		font-size: 16px;
 		line-height: 22px;
 	}
-`;
-
-export const Frame = styled.div`
-	margin-bottom: 40px;
 `;
 
 export const Title = styled.h1`

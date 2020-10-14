@@ -1,6 +1,6 @@
 import React from 'react';
 import faqsData from '../fixtures/faqs.json';
-import { Accordion } from '../components';
+import { Accordion, SendEmail } from '../components';
 
 export default function FaqsContainer() {
 	return (
@@ -12,6 +12,14 @@ export default function FaqsContainer() {
 					<Accordion.Body>{item.body}</Accordion.Body>
 				</Accordion.Item>
 			))}
+
+			<SendEmail>
+				<SendEmail.Text>
+					Ready to watch? Enter your email to create or restart your membership.
+				</SendEmail.Text>
+				<SendEmail.Input placeholder="Email address" />
+				<SendEmail.Button>Get Started</SendEmail.Button>
+			</SendEmail>
 		</Accordion>
 	);
 }

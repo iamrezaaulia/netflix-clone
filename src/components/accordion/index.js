@@ -5,7 +5,6 @@ import {
 	Item,
 	Header,
 	Body,
-	Frame,
 	Title,
 } from './styles/accordion';
 
@@ -23,10 +22,6 @@ Accordion.Title = function AccordionTitle({ children, ...restProps }) {
 	return <Title {...restProps}>{children}</Title>;
 };
 
-Accordion.Frame = function AccordionFrame({ children, ...restProps }) {
-	return <Frame {...restProps}>{children}</Frame>;
-};
-
 Accordion.Item = function AccordionItem({ children, ...restProps }) {
 	const [toggleShow, setToggleShow] = useState(false);
 
@@ -40,8 +35,12 @@ Accordion.Item = function AccordionItem({ children, ...restProps }) {
 Accordion.Header = function AccordionHeader({ children, ...restProps }) {
 	const { toggleShow, setToggleShow } = useContext(ToggleContext);
 
+	const toggle = () => {
+		setToggleShow(!toggleShow);
+	};
+
 	return (
-		<Header onClick={() => setToggleShow(!toggleShow)} {...restProps}>
+		<Header onClick={toggle} {...restProps}>
 			{children}
 			{toggleShow ? (
 				<img src="/images/icons/close-slim.png" alt="Close" />
