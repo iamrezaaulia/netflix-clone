@@ -5,7 +5,6 @@ export default function FooterContainer() {
 	return (
 		<Footer>
 			<Footer.Title>Question ? Contact Us.</Footer.Title>
-			<Footer.Break />
 			<Footer.Row>
 				<Footer.Column>
 					<Footer.Link href="#">FAQ</Footer.Link>
@@ -33,6 +32,8 @@ export default function FooterContainer() {
 					<Footer.Link href="#">Legal Notices</Footer.Link>
 				</Footer.Column>
 			</Footer.Row>
+			<Footer.Break />
+			<Footer.Title>Netflix Clone Indonesia</Footer.Title>
 		</Footer>
 	);
 }

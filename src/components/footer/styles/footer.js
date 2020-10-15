@@ -31,12 +31,12 @@ export const Column = styled.div`
 export const Link = styled.a`
 	color: #757575;
 	margin-bottom: 20px;
-	font-size: 14px;
+	font-size: 16px;
 	text-decoration: none;
 `;
 
 export const Title = styled.p`
-	font-size: 16px;
+	font-size: 18px;
 	color: #757575;
 	margin-bottom: 40px;
 `;
