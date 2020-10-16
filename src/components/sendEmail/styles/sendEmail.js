@@ -32,14 +32,7 @@ export const Input = styled.input`
 	padding: 10px;
 	height: 70px;
 	box-sizing: border-box;
-
-	&:focus {
-		outline: none;
-	}
-
-	&:hover {
-		border: 1px solid #e50914;
-	}
+	outline: none;
 
 	@media (max-width: 1000px) {
 		width: 100%;
@@ -61,11 +54,8 @@ export const Button = styled.button`
 	font-size: 24px;
 	border: 0;
 	box-sizing: border-box;
+	outline: none;
 	cursor: pointer;
-
-	&:focus {
-		outline: none;
-	}
 
 	&:hover {
 		background: #f40612;
