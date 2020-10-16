@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text, Input, Button } from './styles/sendEmail';
+import { Container, Text, Input, Button, Break } from './styles/sendEmail';
 
 export default function SendEmail({ children, ...restProps }) {
 	return <Container {...restProps}>{children}</Container>;
@@ -19,4 +19,8 @@ SendEmail.Button = function SendEmailButton({ children, ...restProps }) {
 			{children} <img src="/images/icons/chevron-right.png" alt="Get Started" />
 		</Button>
 	);
+};
+
+SendEmail.Break = function SendEmailBreak({ children, ...restProps }) {
+	return <Break {...restProps}>{children}</Break>;
 };

@@ -17,6 +17,7 @@ export default function FaqsContainer() {
 				<SendEmail.Text>
 					Ready to watch? Enter your email to create or restart your membership.
 				</SendEmail.Text>
+				<SendEmail.Break />
 				<SendEmail.Input placeholder="Email address" />
 				<SendEmail.Button>Get Started</SendEmail.Button>
 			</SendEmail>

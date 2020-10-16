@@ -46,7 +46,7 @@ export const Text = styled.p`
 	color: #757575;
 	margin-bottom: 40px;
 `;
-export const Break = styled.p`
+export const Break = styled.div`
 	flex-basis: 100%;
 	height: 0;
 `;

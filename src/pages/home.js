@@ -8,10 +8,11 @@ import {
 
 export default function Home() {
   return (
-    <HeaderContainer>
+    <>
+      <HeaderContainer />
       <JumbotronContainer />
 			<FaqsContainer />
 			<FooterContainer />
-    </HeaderContainer>
+    </>
   )
 }

@@ -33,6 +33,14 @@ export const Input = styled.input`
 	height: 70px;
 	box-sizing: border-box;
 
+	&:focus {
+		outline: none;
+	}
+
+	&:hover {
+		border: 1px solid #e50914;
+	}
+
 	@media (max-width: 1000px) {
 		width: 100%;
 		height: 50px;
@@ -55,6 +63,10 @@ export const Button = styled.button`
 	box-sizing: border-box;
 	cursor: pointer;
 
+	&:focus {
+		outline: none;
+	}
+
 	&:hover {
 		background: #f40612;
 	}
@@ -74,4 +86,9 @@ export const Button = styled.button`
 			width: 18px;
 		}
 	}
+`;
+
+export const Break = styled.div`
+	flex-basis: 100%;
+	height: 0;
 `;
