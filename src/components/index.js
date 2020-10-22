@@ -5,3 +5,5 @@ export { default as SendEmail } from './sendEmail';
 export { default as Header } from './header';
 export { default as Feature } from './feature';
 export { default as Form } from './form';
+export { default as Profile } from './profile';
+export { default as Loading } from './loading';

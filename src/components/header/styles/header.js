@@ -5,6 +5,10 @@ export const Background = styled.div`
   display: flex;
   flex-direction: column;
   background: url(${({ src }) => src ? `../images/misc/${src}.jpg` : `../images/misc/home-bg.jpg`}) top left / cover no-repeat;
+
+  @media (max-width: 1000px) {
+    ${({ dontShowOnSmallView }) => dontShowOnSmallView && `background: none;`}
+  }
 `;
 
 export const Container = styled.div`
@@ -50,5 +54,50 @@ export const ButtonLink = styled(ReactRouterLink)`
 
   &::hover {
     background-color: #f40612;
+  }
+`;
+
+export const Feature = styled(Container)`
+  padding: 150px 0 500px 0;
+  flex-direction: column;
+  align-items: normal;
+  width: 50%;
+
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
+export const Title = styled.h2`
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 24px;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+`;
+
+export const SubTitle = styled.p`
+  color: #ffffff;
+  margin: 0;
+  font-size: 22px;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+`;
+
+export const Link = styled.p`
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 30px;
+  font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
   }
 `;
