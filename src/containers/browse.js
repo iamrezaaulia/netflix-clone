@@ -11,11 +11,15 @@ export default function BrowseContainer({ slides }) {
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
 
+  const signOut = () => {
+    firebase.auth().signOut()
+  }
+
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 3000)
-  }, [profile.displayName])
+  }, [profile.displayName]);
 
   return (
     profile.displayName ? (
@@ -24,9 +28,25 @@ export default function BrowseContainer({ slides }) {
 
         <Header src='joker' dontShowOnSmallView>
           <Header.Frame>
-            <Header.Logo to={ROUTES.HOME} src='/images/logo/logo.svg' alt='Netflix' />
-            <Header.TextLink>Series</Header.TextLink>
-            <Header.TextLink>Films</Header.TextLink>
+            <Header.Group>
+              <Header.Logo to={ROUTES.HOME} src='/images/logo/logo.svg' alt='Netflix' />
+              <Header.TextLink>Series</Header.TextLink>
+              <Header.TextLink>Films</Header.TextLink>
+            </Header.Group>
+            <Header.Group>
+              <Header.Profile>
+                <Header.Picture src={user.photoURL} />
+                <Header.Dropdown>
+                  <Header.Group>
+                    <Header.Picture src={user.photoURL} />
+                    <Header.TextLink> {user.displayName} </Header.TextLink>
+                  </Header.Group>
+                  <Header.Group>
+                    <Header.TextLink onClick={signOut}>Sign Out</Header.TextLink>
+                  </Header.Group>
+                </Header.Dropdown>
+              </Header.Profile>
+            </Header.Group>
           </Header.Frame>
           <Header.Feature>
             <Header.Title>Watch Joker Now</Header.Title>

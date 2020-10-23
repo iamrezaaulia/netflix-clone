@@ -8,7 +8,11 @@ import {
   Feature,
   Title,
   SubTitle,
-  Link
+  Link,
+  Group,
+  Picture,
+  Profile,
+  Dropdown
 } from './styles/header';
 
 export default function Header({ bg = true, children, ...restProps }) {
@@ -23,6 +27,10 @@ Header.Feature = function HeaderFeature({ children, ...restProps }) {
   return <Feature {...restProps}> {children} </Feature> 
 };
 
+Header.Group = function HeaderGroup({ children, ...restProps }) {
+  return <Group {...restProps}> {children} </Group> 
+};
+
 Header.Title = function FeatureTitle({ children, ...restProps }) {
   return <Title {...restProps}> {children} </Title>;
 };
@@ -35,12 +43,24 @@ Header.TextLink = function FeatureTextLink({ children, ...restProps }) {
   return <Link {...restProps}> {children} </Link>;
 };
 
+Header.Picture = function HeaderPicture({ src, ...restProps }) {
+  return <Picture {...restProps} src={`/images/users/${src}.png`} />;
+};
+
 Header.Logo = function HeaderLogo({ to, ...restProps}) {
   return (
     <ReactRouterLink to={to}>
       <Logo {...restProps} />
     </ReactRouterLink>
   );
+};
+
+Header.Profile = function FeatureProfile({ children, ...restProps }) {
+  return <Profile {...restProps}> {children} </Profile>;
+};
+
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+  return <Dropdown {...restProps}>{children}</Dropdown>;
 };
 
 Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
