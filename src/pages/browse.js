@@ -10,7 +10,7 @@ export default function Browse() {
 
   return (
     <>
-      <BrowseContainer />
+      <BrowseContainer slides={slides}/>
     </>
   )
 }

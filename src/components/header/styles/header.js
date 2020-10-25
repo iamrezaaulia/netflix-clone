@@ -200,7 +200,7 @@ export const SearchInput = styled.input`
   color: #ffffff;
   border: 1px solid white;
   outline: none;
-  transition: width 0.3s;
+  transition: width 0.5s;
   height: 30px;
   font-size: 14px;
   margin-left: ${({ active }) => (active === true ? '10px' : '0')};
@@ -213,7 +213,7 @@ export const PlayButton = styled.button`
   background-color: #e6e6e6;
   color: #000000;
   border-width: 0;
-  border-radius: 2px;
+  border-radius: 1px;
   padding: 10px 20px;
   max-width: 130px;
   font-weight: bold;
