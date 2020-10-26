@@ -7,8 +7,7 @@ export default function UseContent(target) {
   const [content, setContent] = useState([]);
 
   useEffect(() => {
-    firebase
-      .firestore()
+    firebase      .firestore()
       .collection(target)
       .get()
       .then((snapshot) => {
@@ -25,4 +24,4 @@ export default function UseContent(target) {
   }, [])
 
   return { [target]: content };
-}
+};
