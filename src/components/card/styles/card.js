@@ -152,7 +152,7 @@ export const Feature = styled.div`
   position: relative;
   height: 360px;
 
-  @media (max-width: 1000px) {
+  @media (max-width: 766px) {
     height: auto;
     background-size: auto;
 
@@ -179,6 +179,7 @@ export const FeatureClose = styled.button`
   top: 20px;
   background-color: transparent;
   border: 0;
+  outline: none;
   cursor: pointer;
 
   img {
@@ -191,7 +192,7 @@ export const Maturity = styled.div`
   color: #ffffff;
   background-color: ${({ rating }) => (rating >= 15 ? 'red' : 'green')};
   width: 20px;
-  border-radius: 15px;
+  border-radius: 2px;
   text-align: center;
   font-size: 12px;
   font-weight: bold;
