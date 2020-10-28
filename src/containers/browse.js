@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import Fuse from 'fuse.js';
 import ProfileContainer from './profile';
 import FooterContainer from './footer';
 import { FirebaseContext } from '../context/firebaseContext';
@@ -29,6 +30,22 @@ export default function BrowseContainer({ slides }) {
     setSlideRows(slides[category]);
   }, [slides, category]);
 
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, { keys: ['data.title', 'data.genre', 'data.description'] });
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+
+    { 
+      ( slideRows.length > 0 && 
+        searchTerm.length > 3 && 
+        searchTerm.length > 0
+      ) ? (
+        setSlideRows(results) 
+      ) : (
+        setSlideRows(slides[category])
+      )
+    }
+  }, [searchTerm]);
+
   return (
     profile.displayName ? (
       <>
@@ -52,7 +69,10 @@ export default function BrowseContainer({ slides }) {
               </Header.TextLink>
             </Header.Group>
             <Header.Group>
-              <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+              <Header.Search 
+                searchTerm={searchTerm} 
+                setSearchTerm={setSearchTerm} 
+              />
               <Header.Profile>
                 <Header.Picture src={user.photoURL} />
                 <Header.Dropdown>
